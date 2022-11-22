@@ -6,16 +6,21 @@
   
 }
 
+body {
+  background-color: rgb(21, 73, 73);
+}
+
 .container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  
 }
 
 .calculator {
- 
+ border: 2px solid white;
 } 
 
 .input {
@@ -25,7 +30,16 @@
 }
 
 .buttons {
+  border: 1px solid red;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr ;
 
+}
+#clearAll{
+  border: 1px solid rgb(247, 0, 0);
+}
+
+#equalButton {
+  grid-column-start: 3;
+  grid-column-end: 5;
 }
