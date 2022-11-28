@@ -23,9 +23,10 @@ body {
  border: 2px solid white;
 } 
 
-.input {
+.inputDisplay {
   margin-bottom: 2px;
   border: 2px solid black;
+  background-color: white;
 
 }
 
