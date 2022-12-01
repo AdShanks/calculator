@@ -1,3 +1,4 @@
+const calculator = document.querySelector(".calculator")
 const inputDisplay = document.querySelector(".inputDisplay");
 const allButtons = document.querySelectorAll(".buttons"
 );
@@ -5,18 +6,56 @@ const clearAllButton = document.querySelector("#clearAll");
 const equalButton = document.querySelector("#equalButton");
 const operatorButton = document.querySelector(".operator");
 
-//Target the event. Pull the text from event. Display the text from event into the input field
+
 
 allButtons.forEach(buttons => {
   buttons.addEventListener("click", event => {
-    // if (!event.target.closest("button")) { 
+   
     const pressedButton = event.target;
     const buttonValue = pressedButton.textContent;
     const displayValue = inputDisplay.textContent
+    const {previousKeyType} = calculator.dataset
 
-    if(displayValue === "0"){
+    // When Number Button is Pressed
+   if(pressedButton.classList.contains("number"))
+    {
+      if(displayValue === "0"){
     inputDisplay.textContent = buttonValue}
-    else {inputDisplay.textContent = displayValue + buttonValue}
-    // Number Concatination Works
+      else if(previousKeyType === "operator")
+     {
+       inputDisplay.textContent = buttonValue
+     }
+      else {inputDisplay.textContent = displayValue + buttonValue
+    }
+  }
+  calculator.dataset.previousKeyType = "number"
 
-})})
+     // When Operator Button is Pressed
+if(pressedButton.classList.contains("operator")) {
+  // console.log(pressedButton);
+   calculator.dataset.previousKeyType = "operator"
+  calculator.dataset.firstNumber = displayValue;
+  calculator.dataset.operator = pressedButton.dataset.key
+  
+};
+    //Calculate
+ if(pressedButton.classList.contains("equal"))
+ {
+   const firstNumber = parseInt(calculator.dataset.firstNumber);
+   const operator = calculator.dataset.operator;
+   const secondNumber = parseInt(displayValue);
+      // console.log(firstNumber, operator, secondNumber)
+      let result = ""
+   if(operator === "add") {result = firstNumber + secondNumber};
+   if(operator ==="subtract") {result = firstNumber - secondNumber};
+   if(operator ==="multiply") {result = firstNumber * secondNumber};
+   if(operator === "divide") {result = firstNumber / secondNumber};
+   
+   inputDisplay.textContent = result
+   calculator.dataset.previousKeyType = pressedButton.dataset
+ }
+ 
+ })
+
+  })
+

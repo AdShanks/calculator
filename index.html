@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <script src="./main.js" async defer></script>
 </head>
 <body>
   <div class="container">
@@ -12,28 +13,27 @@
         <div class="inputDisplay">0</div> 
         <div class="buttons">
           <button id="clearAll">C</button>
-          <button>%</button>
-          <button class="operator" id="divide" data-type ="operator">/</button>
-          <button class="number">7</button>
-          <button class="number">8</button>
-          <button class="number">9</button>
-          <button class="operator" id="multiply">x</button>
-          <button class="number">4</button>
-          <button class="number">5</button>
-          <button class="number">6</button>
-          <button class="operator" id="subtraction">-</button>
-          <button class="number">1</button>
-          <button class="number">2</button>
-          <button class="number">3</button>
-          <button class="operator" id="addition">+</button>
-          <button class="number">0</button>
+          <button class="operator" id="divide" data-key="divide" data-type ="operator">/</button>
+          <button class="number" data-type ="number">7</button>
+          <button class="number" data-type ="number">8</button>
+          <button class="number" data-type ="number">9</button>
+          <button class="operator" id="multiply" data-key="multiply" data-type="operator">x</button>
+          <button class="number" data-type ="number">4</button>
+          <button class="number" data-type ="number">5</button>
+          <button class="number" data-type ="number">6</button>
+          <button class="operator" id="subtraction" data-key="subtract" data-type="operator">-</button>
+          <button class="number" data-type ="number">1</button>
+          <button class="number" data-type ="number">2</button>
+          <button class="number" data-type ="number">3</button>
+          <button class="operator" id="addition" data-key="add" data-type="operator">+</button>
+          <button class="number" data-type ="number">0</button>
           <button>.</button>
           <button class="equal">=</button>
           
         </div>
       </div>
   </div>
-  <script src="./main.js"></script>
+  
   
 </body>
 </html>

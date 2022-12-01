@@ -21,6 +21,7 @@ body {
 
 .calculator {
  border: 2px solid white;
+ width: 100px;
 } 
 
 .inputDisplay {
@@ -31,16 +32,16 @@ body {
 }
 
 .buttons {
-  border: 1px solid red;
+ 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr ;
   grid-gap: 1px;
 
 }
 #clearAll{
-  border: 1px solid rgb(247, 0, 0);
+  
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
 }
 
 .equal {
